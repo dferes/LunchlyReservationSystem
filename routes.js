@@ -14,6 +14,16 @@ router.get("/", async function(req, res, next) {
   }
 });
 
+/*Search all customers matching the first name. */
+router.post("/search/", async function(req, res, next) {
+  try{
+    const customers = await Customer.search(req.body.customerQuery);
+    return res.render("customer_search_response.html", { customers });
+  } catch(err) {
+    return next(err);
+  }
+});
+
 /* Form to add a new customer. */
 router.get("/add/", async function(req, res, next) {
   try {
@@ -102,18 +112,5 @@ router.post("/:id/add-reservation/", async function(req, res, next) {
   }
 });
 
-
-router.get("/search-customers/", async (req, res, next) => {
-  console.log('------------------------------', 'You inside the search endpoint');
-  try{
-    const nameQuery = req.body.customerQuery;
-    console.log(nameQuery);
-    const customers = null;
-    // const customers = await Customer.search(nameQuery);
-    return res.render("customer_search_response.html", { customers });
-  } catch(err) {
-    return next(err);
-  }
-});
 
 module.exports = router;
