@@ -8,6 +8,7 @@ const app = express();
 // Parse body for urlencoded (non-JSON) data
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 nunjucks.configure("templates", {
   autoescape: true,
   express: app
