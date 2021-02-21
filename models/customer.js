@@ -50,7 +50,8 @@ class Customer {
   }
 
   static async search(nameQuery) {
-    const firstName = nameQuery.split(' ');
+    const firstName = nameQuery.split(' ')[0];
+    
     const results = await db.query(
       `SELECT id, 
       first_name AS "firstName",  
@@ -59,10 +60,9 @@ class Customer {
       notes
       FROM customers
       WHERE first_name = $1
-      LINIT 10`,
-      [firstName]
+      LIMIT 10`,
+      [`${firstName.substring(0,1).toUpperCase()}${firstName.substring(1, firstName.length)}`]
     )
-    console.log(results.rows);
     return results.rows.map( c => new Customer(c) );
   }
 
