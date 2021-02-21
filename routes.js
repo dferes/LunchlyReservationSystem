@@ -1,5 +1,4 @@
 const express = require("express");
-
 const Customer = require("./models/customer");
 const Reservation = require("./models/reservation");
 
@@ -99,6 +98,20 @@ router.post("/:id/add-reservation/", async function(req, res, next) {
 
     return res.redirect(`/${customerId}/`);
   } catch (err) {
+    return next(err);
+  }
+});
+
+
+router.get("/search-customers/", async (req, res, next) => {
+  console.log('------------------------------', 'You inside the search endpoint');
+  try{
+    const nameQuery = req.body.customerQuery;
+    console.log(nameQuery);
+    const customers = null;
+    // const customers = await Customer.search(nameQuery);
+    return res.render("customer_search_response.html", { customers });
+  } catch(err) {
     return next(err);
   }
 });
