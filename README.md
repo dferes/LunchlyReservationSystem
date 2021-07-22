@@ -1,4 +1,4 @@
-## UTube
+## Lunchly
 
 A simple app for making reservations, built with React, Node.js, Express, PostgreSQL, HTML and CSS.
 
