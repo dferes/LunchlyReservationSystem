@@ -129,6 +129,3 @@ beforeEach(async () => {
 
     })
   })
-
-// Look at the videos in section 36 'Express testing practices' for how to send form data when testing...
-// REMEMBER TO FIND A WAY OF SENDING A STATUS CODE OF 201 IN routes.js WHEN YOU TEST 'POST: /add/ '
