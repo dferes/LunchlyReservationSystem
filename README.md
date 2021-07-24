@@ -2,6 +2,8 @@
 
 A simple app for making reservations, built with Node.js, Express, PostgreSQL, Nunjucks, HTML and CSS.
 
+Deployed with heroku here: https://dylan-feres-lunchly.herokuapp.com/
+
 
 ## Installation and Setup Instructions
 
@@ -15,14 +17,18 @@ To create the database:
 
 `createdb lunchly`
 
+To create the test database: 
+
+`createdb lunchly_test`
+
 To seed the database (make sure you are in the root directory):
 
 `psql lunchly < data.sql`
 
-To Start Server:
+To start the server:
 
 `npm start`  
 
-To Visit App:
+To visit the app (at http://localhost:3000/):
 
-`localhost:3000/`  
+`npm start`  
