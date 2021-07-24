@@ -1,6 +1,6 @@
 ## Lunchly
 
-A simple app for making reservations, built with React, Node.js, Express, PostgreSQL, HTML and CSS.
+A simple app for making reservations, built with Node.js, Express, PostgreSQL, Nunjucks, HTML and CSS.
 
 
 ## Installation and Setup Instructions
