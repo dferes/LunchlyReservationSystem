@@ -29,6 +29,10 @@ To start the server:
 
 `npm start`  
 
+To run the tests:
+
+`jest -i`  
+
 To visit the app (at http://localhost:3000/):
 
 `npm start`  
